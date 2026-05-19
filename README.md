@@ -88,5 +88,5 @@
 <div align="center">
   <img src="https://media.tenor.com/zhdk5VoJRiMAAAAi/cat-computer.gif" width="200"/>
   <br/>
-  <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=14&pause=1000&color=C084FC&center=true&vCenter=true&width=400&lines=Thanks+for+visiting!+%F0%9F%92%9C;Keep+coding+%F0%9F%9A%80" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=14&pause=1000&color=C084FC&center=true&vCenter=true&width=400&lines=Thanks+for+visiting!+%F0%9F%92%9C;" />
 </div>
