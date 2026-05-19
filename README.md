@@ -1,4 +1,8 @@
 <p align="center">
+  <img src="https://media.tenor.com/tyKRuPLxVjEAAAAi/oi.gif" width="120"/>
+</p>
+
+<p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=32&pause=1500&color=C084FC&center=true&vCenter=true&width=500&lines=Hello%2C+I'm+Edgar+%F0%9F%91%8B" />
 </p>
 
@@ -6,13 +10,6 @@
 <p align="center">
   Building web & mobile experiences • Studying cybersecurity
 </p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=EnosS2&show_icons=true&theme=tokyonight&hide_border=true&bg_color=00000000" height="170"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=EnosS2&layout=compact&theme=tokyonight&hide_border=true&bg_color=00000000" height="170"/>
-</p>
-
----
 
 # 💻 Tech Stack
 
