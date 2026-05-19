@@ -45,16 +45,6 @@
 
 ---
 
-## 📊 GitHub Stats
-
-<div align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=EnosS2&theme=tokyonight" width="100%"/>
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=EnosS2&theme=tokyonight" height="180em"/>
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=EnosS2&theme=tokyonight" height="180em"/>
-</div>
-
-<br/>
-
 <div align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=EnosS2&theme=tokyonight&hide_border=true" />
 </div>
