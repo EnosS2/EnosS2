@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="470" height="44" viewBox="0 0 470 44" role="img" aria-label="Full Stack, Cybersecurity, Brazil">
+  <g fill="#0D1117" stroke="#00FF00" stroke-width="3">
+    <rect x="1.5" y="1.5" width="158" height="41" rx="3"/>
+    <rect x="173.5" y="1.5" width="176" height="41" rx="3"/>
+    <rect x="363.5" y="1.5" width="105" height="41" rx="3"/>
+  </g>
+  <g fill="#00FF00" font-family="JetBrains Mono, DejaVu Sans Mono, Consolas, monospace"
+     font-size="16" font-weight="bold" text-anchor="middle" letter-spacing="1">
+    <text x="80.5" y="28">&#9829; FULL STACK</text>
+    <text x="261.5" y="28">CYBERSECURITY</text>
+    <text x="416" y="28">BRAZIL</text>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s --max-time 15 \"https://api.github.com/users/EnosS2/repos?sort=updated&per_page=30\")",
+      "Bash(grep -n '^## \\\\|^---$' README.md)",
+      "Bash(curl -s --max-time 20 -A \"Mozilla/5.0\" -L \"https://tenor.com/view/swaying-wiggle-dancing-dance-bouncing-gif-26574440\")",
+      "Bash(identify -format \"%n frames | %wx%h | transparent-color:%[transparent-color] | bg:%[background]\\\\n\" g_AAAAC.gif)",
+      "Bash(convert g_AAAAC.gif[0] -format \"%[pixel:p{0,0}] %[pixel:p{487,0}] %[pixel:p{0,497}] %[pixel:p{487,497}]\" info:)",
+      "Bash(python3 -c \"import PIL; print\\('Pillow', PIL.__version__\\)\")",
+      "Bash(python3 -c ' *)",
+      "Bash(python3 detrans.py g_AAAAC.gif)",
+      "Bash(curl -s --max-time 15 \"https://img.shields.io/badge/Focus-Full%20Stack-00FF00?style=flat-square&labelColor=0D1117\")",
+      "Bash(grep -oE '<text[^>]*fill=\"[^\"]*\"|fill=\"#[0-9a-fA-F]{3,6}\"')",
+      "Bash(python3 -c \"import cairosvg; print\\('cairosvg ok'\\)\")",
+      "Bash(google-chrome --headless --disable-gpu --no-sandbox --force-device-scale-factor=2 --window-size=470,44 --default-background-color=00000000 --screenshot=badges.png /home/edgar-oliveira/Documents/EnosS2/assets/badges.svg)",
+      "Bash(file assets/*)"
+    ]
+  }
+}
