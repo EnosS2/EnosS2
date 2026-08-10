@@ -105,4 +105,4 @@ Happy to talk about **cybersecurity** and **games**
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=14&pause=1000&color=00FF00&center=true&vCenter=true&height=26&width=190&lines=Thanks+for+visiting!" />
 </p>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D1117,100:00FF00&height=120&section=footer" width="100%" />
+<img src="assets/flower-bed.png" width="100%" alt="golden flowers"/>
