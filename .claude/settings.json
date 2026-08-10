@@ -13,7 +13,12 @@
       "Bash(grep -oE '<text[^>]*fill=\"[^\"]*\"|fill=\"#[0-9a-fA-F]{3,6}\"')",
       "Bash(python3 -c \"import cairosvg; print\\('cairosvg ok'\\)\")",
       "Bash(google-chrome --headless --disable-gpu --no-sandbox --force-device-scale-factor=2 --window-size=470,44 --default-background-color=00000000 --screenshot=badges.png /home/edgar-oliveira/Documents/EnosS2/assets/badges.svg)",
-      "Bash(file assets/*)"
+      "Bash(file assets/*)",
+      "Bash(python3 gen_box.py)",
+      "Bash(google-chrome --headless --disable-gpu --no-sandbox --window-size=640,420 --virtual-time-budget=5200 --screenshot=box2.png shot.html)",
+      "Bash(grep -n '^## \\\\|^---$\\\\|assets/' README.md)",
+      "Bash(google-chrome --headless --disable-gpu --no-sandbox --window-size=480,880 --screenshot=sheet.png sheet.html)",
+      "Bash(python3 -)"
     ]
   }
 }
