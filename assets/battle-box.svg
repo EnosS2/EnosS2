@@ -1,11 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="178"
-     viewBox="0 0 600 178" role="img" aria-label="Undertale battle box: the SOUL dodging bullets">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="600" height="178" viewBox="0 0 600 178"
+     role="img" aria-label="Undertale battle box: the SOUL dodging bullets">
   <style>
     @keyframes fall {
       from { transform: translateY(-18px); }
       to   { transform: translateY(176px); }
     }
+    /* the projectile sprite sheet is 36 rotation frames laid out on a uniform
+       20px grid, so stepping the strip one cell at a time replays the real
+       spin cycle -- every bullet turns the same way, at its own rate */
+    @keyframes spin {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-720px); }
+    }
     .soul { animation: dodge 12.0s linear infinite; }
+    .soul image { image-rendering: pixelated; }
     @keyframes dodge {
       0.0% { transform: translate(176.0px, 80.6px); }
       0.833% { transform: translate(204.0px, 80.6px); }
@@ -130,23 +139,41 @@
       100.0% { transform: translate(176.0px, 80.6px); }
     }
     .b0 { animation: fall 3.0s linear -0.0s infinite; }
+    .p0 { animation: spin 1.1s steps(36) -0.0s infinite; }
     .b1 { animation: fall 4.0s linear -1.4s infinite; }
+    .p1 { animation: spin 1.35s steps(36) -0.41s infinite; }
     .b2 { animation: fall 3.0s linear -2.2s infinite; }
+    .p2 { animation: spin 1.0s steps(36) -0.72s infinite; }
     .b3 { animation: fall 6.0s linear -0.7s infinite; }
+    .p3 { animation: spin 1.5s steps(36) -0.18s infinite; }
     .b4 { animation: fall 4.0s linear -3.1s infinite; }
+    .p4 { animation: spin 1.2s steps(36) -0.95s infinite; }
     .b5 { animation: fall 3.0s linear -1.1s infinite; }
+    .p5 { animation: spin 1.45s steps(36) -0.33s infinite; }
     .b6 { animation: fall 4.0s linear -2.6s infinite; }
+    .p6 { animation: spin 1.05s steps(36) -0.6s infinite; }
     .b7 { animation: fall 6.0s linear -0.3s infinite; }
+    .p7 { animation: spin 1.3s steps(36) -0.87s infinite; }
     .b8 { animation: fall 6.0s linear -4.5s infinite; }
+    .p8 { animation: spin 1.4s steps(36) -0.25s infinite; }
     .b9 { animation: fall 4.0s linear -5.2s infinite; }
+    .p9 { animation: spin 1.15s steps(36) -1.02s infinite; }
     .b10 { animation: fall 6.0s linear -2.0s infinite; }
+    .p10 { animation: spin 1.25s steps(36) -0.55s infinite; }
     .b11 { animation: fall 3.0s linear -4.0s infinite; }
+    .p11 { animation: spin 1.55s steps(36) -0.78s infinite; }
     @media (prefers-reduced-motion: reduce) {
-      .soul, ellipse { animation: none; }
+      .soul, .b0, .p0, .b1, .p1, .b2, .p2, .b3, .p3, .b4, .p4, .b5, .p5, .b6, .p6, .b7, .p7, .b8, .p8, .b9, .p9, .b10, .p10, .b11, .p11 { animation: none; }
     }
   </style>
 
-  <clipPath id="box"><rect x="10" y="10" width="580" height="158"/></clipPath>
+  <defs>
+    <image id="pellet" width="720" height="20"
+           href="data:image/png;base64,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"
+           xlink:href="data:image/png;base64,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"/>
+    <clipPath id="cell"><rect x="0" y="0" width="20" height="20"/></clipPath>
+    <clipPath id="box"><rect x="10" y="10" width="580" height="158"/></clipPath>
+  </defs>
 
   <rect x="5" y="5" width="590" height="168"
         fill="#000000" stroke="#FFFFFF" stroke-width="5"/>
@@ -156,32 +183,96 @@
        offsets the clip window and lets bullets escape past the border -->
   <g clip-path="url(#box)">
     <g transform="translate(10, 10)">
-      <ellipse class="b0" cx="55" cy="0" rx="5" ry="9" fill="#FFFFFF"/>
-      <ellipse class="b1" cx="120" cy="0" rx="5" ry="9" fill="#FFFFFF"/>
-      <ellipse class="b2" cx="185" cy="0" rx="5" ry="9" fill="#FFFFFF"/>
-      <ellipse class="b3" cx="250" cy="0" rx="5" ry="9" fill="#FFFFFF"/>
-      <ellipse class="b4" cx="315" cy="0" rx="5" ry="9" fill="#FFFFFF"/>
-      <ellipse class="b5" cx="380" cy="0" rx="5" ry="9" fill="#FFFFFF"/>
-      <ellipse class="b6" cx="445" cy="0" rx="5" ry="9" fill="#FFFFFF"/>
-      <ellipse class="b7" cx="510" cy="0" rx="5" ry="9" fill="#FFFFFF"/>
-      <ellipse class="b8" cx="88" cy="0" rx="5" ry="9" fill="#FFFFFF"/>
-      <ellipse class="b9" cx="215" cy="0" rx="5" ry="9" fill="#FFFFFF"/>
-      <ellipse class="b10" cx="348" cy="0" rx="5" ry="9" fill="#FFFFFF"/>
-      <ellipse class="b11" cx="478" cy="0" rx="5" ry="9" fill="#FFFFFF"/>
-      <g class="soul" fill="#FF0000">
-        <rect x="4" y="0" width="6" height="2"/>
-        <rect x="18" y="0" width="6" height="2"/>
-        <rect x="2" y="2" width="10" height="2"/>
-        <rect x="16" y="2" width="10" height="2"/>
-        <rect x="0" y="4" width="28" height="2"/>
-        <rect x="0" y="6" width="28" height="2"/>
-        <rect x="0" y="8" width="28" height="2"/>
-        <rect x="2" y="10" width="24" height="2"/>
-        <rect x="4" y="12" width="20" height="2"/>
-        <rect x="6" y="14" width="16" height="2"/>
-        <rect x="8" y="16" width="12" height="2"/>
-        <rect x="10" y="18" width="8" height="2"/>
-        <rect x="12" y="20" width="4" height="2"/>
+      <g transform="translate(45, -10)">
+        <g class="b0">
+          <g clip-path="url(#cell)">
+            <g class="p0"><use href="#pellet" xlink:href="#pellet"/></g>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(110, -10)">
+        <g class="b1">
+          <g clip-path="url(#cell)">
+            <g class="p1"><use href="#pellet" xlink:href="#pellet"/></g>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(175, -10)">
+        <g class="b2">
+          <g clip-path="url(#cell)">
+            <g class="p2"><use href="#pellet" xlink:href="#pellet"/></g>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(240, -10)">
+        <g class="b3">
+          <g clip-path="url(#cell)">
+            <g class="p3"><use href="#pellet" xlink:href="#pellet"/></g>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(305, -10)">
+        <g class="b4">
+          <g clip-path="url(#cell)">
+            <g class="p4"><use href="#pellet" xlink:href="#pellet"/></g>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(370, -10)">
+        <g class="b5">
+          <g clip-path="url(#cell)">
+            <g class="p5"><use href="#pellet" xlink:href="#pellet"/></g>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(435, -10)">
+        <g class="b6">
+          <g clip-path="url(#cell)">
+            <g class="p6"><use href="#pellet" xlink:href="#pellet"/></g>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(500, -10)">
+        <g class="b7">
+          <g clip-path="url(#cell)">
+            <g class="p7"><use href="#pellet" xlink:href="#pellet"/></g>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(78, -10)">
+        <g class="b8">
+          <g clip-path="url(#cell)">
+            <g class="p8"><use href="#pellet" xlink:href="#pellet"/></g>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(205, -10)">
+        <g class="b9">
+          <g clip-path="url(#cell)">
+            <g class="p9"><use href="#pellet" xlink:href="#pellet"/></g>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(338, -10)">
+        <g class="b10">
+          <g clip-path="url(#cell)">
+            <g class="p10"><use href="#pellet" xlink:href="#pellet"/></g>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(468, -10)">
+        <g class="b11">
+          <g clip-path="url(#cell)">
+            <g class="p11"><use href="#pellet" xlink:href="#pellet"/></g>
+          </g>
+        </g>
+      </g>
+      <!-- the SOUL is 16x17 native, drawn at 2x and pulled back half the growth
+           on each axis so the dodge path above still tracks its centre -->
+      <g class="soul">
+        <image x="-2" y="-6" width="32" height="34"
+               href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAARCAYAAADUryzEAAAAU0lEQVR42u2TSwoAIAhEZ7r/nW1jEJIf0GVvWWM+qQBFABFAkGBzPIs2SN27C18ZRl0ZNDgsNGFl7oi2wT9g4hqjl5YUctagamL/yLyBZ0In2zbYmOsYD870EG4AAAAASUVORK5CYII="
+               xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAARCAYAAADUryzEAAAAU0lEQVR42u2TSwoAIAhEZ7r/nW1jEJIf0GVvWWM+qQBFABFAkGBzPIs2SN27C18ZRl0ZNDgsNGFl7oi2wT9g4hqjl5YUctagamL/yLyBZ0In2zbYmOsYD870EG4AAAAASUVORK5CYII="/>
       </g>
     </g>
   </g>
