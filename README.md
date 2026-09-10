@@ -24,7 +24,7 @@
 <div align="center">
 
 Biomedical Informatics student, working mostly on **frontend**  
-Studying **cybersecurity** — vulnerability analysis and secure development  
+Studying **cybersecurity** - vulnerability analysis and secure development  
 Happy to talk about **cybersecurity** and **games**
 
 </div>
